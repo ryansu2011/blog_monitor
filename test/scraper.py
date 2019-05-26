@@ -1,11 +1,15 @@
 import src.scraper as scraper
+from src.settings import Settings
 
 
-ret = scraper.craw_all()
-print(ret.__next__())
-print("\n-----------------------------\n")
-print(ret.__next__())
-print("\n-----------------------------\n")
-print(ret.__next__())
-print("\n-----------------------------\n")
+def start_test():
+    # read config file
+    settings = Settings("../config/test_config.json")
 
+    # tell scraper about the settings
+    scraper.settings_ref = settings
+
+    # scrape
+    ret = scraper.craw_all()
+    for obj in ret:
+        print(obj)

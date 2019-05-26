@@ -30,7 +30,7 @@ class Snapshot:
         :return: dict{str title, str url}, new items
         """
         new = self
-        if new.data.__len__() is not old.data.__len__():
+        if new.data.__len__() != old.data.__len__():
             raise Exception("Warning: inconsistent # of pages in snapshot comparison.")
         if new.call_id <= old.caller_id:
             raise Exception("Warning: comparing to a newer snapshot.")

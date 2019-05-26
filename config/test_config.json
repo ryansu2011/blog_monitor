@@ -1,0 +1,11 @@
+{
+  "pushbullet token" : "enter token here",
+  "notification hours" : [14, 19, 23],
+  "monitored sites" : [
+    {
+      "url" : "https://twitter.com/potus?lang=en",
+      "title xpath" : "//div[@class='js-tweet-text-container']/p/text()",
+      "href xpath" : "//div[@class='js-tweet-text-container']/p/a/@href"
+    }
+  ]
+}

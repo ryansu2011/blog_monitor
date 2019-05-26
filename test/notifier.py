@@ -1,9 +1,15 @@
-import src.notifier as nt
+from src.notifier import PushBulletNotifier
 
 
-def test_pushbullet_nofitier():
-    my_bullet = nt.PushBulletNotifier("o.rzkPR5DVJjD9T3BWXpHIxHTXv2qXV1vc")
+def _test_pushbullet_nofitier(token):
+    my_bullet = PushBulletNotifier(token)
+    # test english
+    my_bullet.push_link("test title", "test body", "www.google.com")
+    # time simplified chinese
     my_bullet.push_link("新消息", "内容", "www.google.com")
 
 
-test_pushbullet_nofitier()
+def start_test():
+    # enter pushbullet token here
+    pushbullet_token = "o.rzkPR5DVJjD9T3BWXpHIxHTXv2qXV1vc"
+    _test_pushbullet_nofitier(pushbullet_token)
