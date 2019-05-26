@@ -1,14 +1,15 @@
 # Blog Monitor
 Not all blogs provide RSS feed or other types of notification systems for new articles. This Blog Monitor project provides a one stop solution for this. With blog monitor, user can monitor multiple blog pages and get Pushbullet notifications when new articles appear.
-##Getting Started
-###Prerequisits
+## Getting Started
+### Prerequisits
 This project is developed in Python 3 and depend on Scrapy and requests packages. To install these packages with pip:
 ```
 pip install Scrapy
 pip install requests
 ```
-The notification system rely on PushBullet service. PushBullet is a cross platform notification service. A PushBullet account is needed and PushBullet app should be installed on the device you want to receive notifications. 
-###Modify Configuration File
+The notification system rely on PushBullet service. PushBullet is a cross platform notification service. A PushBullet account is needed and PushBullet app should be installed on the device you want to receive notifications.
+ 
+### Modify Configuration File
 First, user need to provide the following information in the configuration file:
 * PushBullet user token (you can get is by clicking "Create Access Token" from https://www.pushbullet.com/#settings)
 * The hours (24-hour format) you want to receive notification on
