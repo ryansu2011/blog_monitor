@@ -64,6 +64,9 @@ class PushBulletNotifier:
             break
         self._device_id = devices[idx]['iden']
         self._device_token = devices[idx]['push_token']
+        self.push_link("Blog Monitor",
+                       "This device is selected to receive push notifications when new articles appear",
+                       "https://github.com/ryansu2011/blog_monitor")
 
     def push_link(self, title, body, url):
         """
