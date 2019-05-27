@@ -21,6 +21,12 @@ os.chdir(root_path_str)
 sys.path.insert(0, root_path_str)
 print("Info: added root directory to path. ({})\n".format(root_path_str))
 
+# configuration file path
+if sys.argv.__len__() <= 1:
+    raise Exception("Error. Need to add configuration file name as argument.")
+config_file = sys.argv[1]
+config_file = os.path.abspath(config_file)
+
 # make and go into temp folder
 if not os.path.exists('./temp') or not os.path.isdir('./temp'):
     os.mkdir('./temp')
@@ -96,9 +102,5 @@ def main(config_file_name):
     timer.start_counter()
 
 
-# get tested component
-if sys.argv.__len__() <= 1:
-    raise Exception("Error. Need to add configuration file name as argument.")
-config_file = sys.argv[1]
 main(config_file)
 
